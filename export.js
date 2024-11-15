@@ -10,7 +10,7 @@ $(document).ready(function()
 });
 
 function loadJSON(project,lang,xc,prev) {
-	var url = 'https://'+(prev?'preview-':'')+'deliver.kenticocloud.com/'+project+'/items-feed?order=system.type[asc]'+(lang?'&language='+lang:'');
+	var url = 'https://'+(prev?'preview-':'')+'deliver.kontent.ai/'+project+'/items-feed?order=system.type[asc]'+(lang?'&language='+lang:'');
 	$.ajax({
 		url: url,
 		dataType: 'text',		
@@ -40,7 +40,7 @@ function loadJSON(project,lang,xc,prev) {
 			}
 		},
 		error:function(jqXHR, textStatus, errorThrown){
-			 $("#msg").html("No data found. Please make sure you have correct project id, language and the secured access is turned off.");
+			 $("#msg").html("No data found. Please make sure you have correct project id, language and the API key.");
 		} 
 	});	
 }
